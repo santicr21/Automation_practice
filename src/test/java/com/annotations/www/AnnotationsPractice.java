@@ -14,7 +14,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class AnnotationsPractice {
-    WebDriver driver;
+    private WebDriver driver;
 
     @BeforeClass
     public void startDriver() {
