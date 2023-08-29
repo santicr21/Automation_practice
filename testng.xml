@@ -1,9 +1,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="LoginSuiteTestCase">
-    <test name="Test1">
+<suite name="Suites">
+    <test name="LoginSuite">
         <classes>
             <class name="com.project.pom.RegisterTest"/>
             <class name="com.project.pom.SignInTest"/>
+        </classes>
+    </test>
+    <test name="SimulateCreditSuite">
+        <classes>
+            <class name="com.project.pom.CreditoTest" />
         </classes>
     </test>
 </suite>
