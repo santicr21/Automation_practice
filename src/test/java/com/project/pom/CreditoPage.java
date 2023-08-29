@@ -32,10 +32,10 @@ public class CreditoPage extends Base {
         click (diaInputSelector);
         click (seguroInputLocator);
         click (calcularButtonLocator);
-        Thread.sleep(1500);
     }
 
     public String getAnswerMessage () {
+        WaitUntil (4, answerMessageOutputSelector);
         return getText(answerMessageOutputSelector);
     }
 }

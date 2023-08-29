@@ -4,8 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class Base {
     private WebDriver driver;
@@ -48,8 +51,17 @@ public class Base {
     }
 
     public void select (String optionToFind, By locator) {
-        Select selector = new Select(driver.findElement(locator));
+        Select selector = new Select(this.driver.findElement(locator));
         selector.selectByVisibleText(optionToFind);
+    }
+
+    public void WaitUntil (int seconds, By locator) {
+        try {
+            new WebDriverWait (this.driver, Duration.ofSeconds(seconds)).until(ExpectedConditions.visibilityOfElementLocated(locator));
+        }
+        catch (Exception e) {
+            System.out.println("Element not visible!");
+        }
     }
 
 }
