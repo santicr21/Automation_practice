@@ -1,9 +1,9 @@
-package com.project.pom;
+package com.project.pom.avvillas.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class CreditoPage extends Base {
+public class CreditoPage extends BasePage {
 
     By montoInputLocator = By.id("i_monto_prestamo");
     By plazoInputLocator = By.id("i_plazo_meses");

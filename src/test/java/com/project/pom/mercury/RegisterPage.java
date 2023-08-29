@@ -1,10 +1,11 @@
-package com.project.pom;
+package com.project.pom.mercury;
 
+import com.project.pom.avvillas.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class RegisterPage extends Base {
+public class RegisterPage extends BasePage {
 
     By registerLinkLocator = By.linkText("REGISTER");
     By userNameInputLocator = By.id("email");
