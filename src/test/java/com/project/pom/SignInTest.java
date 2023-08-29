@@ -24,7 +24,7 @@ public class SignInTest {
     }
 
     @Test
-    public void test1 () throws InterruptedException {
+    public void testSignInUser () throws InterruptedException {
         signInPage.signInUser();
         Assert.assertEquals(signInPage.getLoggingMessage(), "Login Successfully", "Login failed");
     }

@@ -24,7 +24,7 @@ public class RegisterTest {
     }
 
     @Test
-    public void test1 () throws InterruptedException {
+    public void testRegisterUser () throws InterruptedException {
         registerPage.registerUser();
         Assert.assertEquals(registerPage.registeredMessage(), "Note: Your user name is santicr.", "Register failed");
     }
