@@ -21,7 +21,7 @@ public class CreditoPage extends Base {
         super(driver);
     }
 
-    public void simulateCredit () throws InterruptedException {
+    public void simulateCredit () {
         type ("1000000", montoInputLocator);
         type ("12", plazoInputLocator);
         click (destinoInputLocator);

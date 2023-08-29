@@ -24,7 +24,7 @@ public class CreditoTest {
     }
 
     @Test
-    public void testSimulateCredit () throws InterruptedException {
+    public void testSimulateCredit () {
         creditoPage.simulateCredit();
         Assert.assertEquals(creditoPage.getAnswerMessage(), "En este momento estamos presentando fallas técnicas, por favor haz clic en \"calcular\" para enviar tu información nuevamente.", "Test failed");
     }
