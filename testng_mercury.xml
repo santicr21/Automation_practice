@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suites">
+    <test name="LoginSuite">
+        <classes>
+            <class name="com.project.pom.mercury.RegisterTest"/>
+            <class name="com.project.pom.mercury.SignInTest"/>
+        </classes>
+    </test>
+</suite>

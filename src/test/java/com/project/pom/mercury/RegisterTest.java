@@ -1,5 +1,6 @@
-package com.project.pom;
+package com.project.pom.mercury;
 
+import com.project.pom.mercury.RegisterPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;

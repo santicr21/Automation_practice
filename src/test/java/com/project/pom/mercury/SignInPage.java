@@ -1,9 +1,10 @@
-package com.project.pom;
+package com.project.pom.mercury;
 
+import com.project.pom.avvillas.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 
-public class SignInPage extends Base {
+public class SignInPage extends BasePage {
 
     By signOnButtonLocator = By.linkText("SIGN-ON");
     By userNameInput = By.name("userName");
