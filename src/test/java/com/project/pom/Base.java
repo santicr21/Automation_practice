@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.support.ui.Select;
+
 public class Base {
     private WebDriver driver;
 
@@ -43,6 +45,11 @@ public class Base {
 
     public void visit (String url) {
         this.driver.get(url);
+    }
+
+    public void select (String optionToFind, By locator) {
+        Select selector = new Select(driver.findElement(locator));
+        selector.selectByVisibleText(optionToFind);
     }
 
 }
