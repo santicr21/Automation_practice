@@ -18,19 +18,19 @@ public class RegisterPage extends Base {
         super(driver);
     }
 
-    public void registerUser() throws InterruptedException {
+    public void registerUser() {
         String password = "123456";
         String userName = "santicr";
-        click(registerLinkLocator);
-        Thread.sleep(2000);
+        click (registerLinkLocator);
+        WaitUntil (4, userNameInputLocator);
         type (userName, userNameInputLocator);
         type (password, passwordInputLocator);
         type (password, confirmPasswordInputLocator);
         click (submitButtonLocator);
     }
 
-    public String registeredMessage () throws InterruptedException {
-        Thread.sleep(2000);
+    public String registeredMessage () {
+        WaitUntil(4, registerMsgLocator);
         WebElement registerMessageElement = findElement(registerMsgLocator);
         return getText(registerMessageElement);
     }

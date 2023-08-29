@@ -15,18 +15,17 @@ public class SignInPage extends Base {
         super(driver);
     }
 
-    public void signInUser () throws InterruptedException {
+    public void signInUser () {
         String userName = "santicr";
         String password = "123456";
-        Thread.sleep(2000);
+        WaitUntil (4, userNameInput);
         type (userName, userNameInput);
         type (password, passwordInputLocator);
         click (submitButtonLocator);
-
-        Thread.sleep(2000);
     }
 
     public String getLoggingMessage () {
+        WaitUntil (3, signInMsgSelector);
         return getText(signInMsgSelector);
     }
 }
