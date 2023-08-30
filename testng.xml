@@ -2,7 +2,7 @@
 <suite name="Suites">
     <test name="SimulateCreditSuite">
         <classes>
-            <class name="com.project.pom.avvillas.tests.CreditoTest" />
+            <class name="com.project.pom.avvillas.tests.CreditTest" />
         </classes>
     </test>
 </suite>

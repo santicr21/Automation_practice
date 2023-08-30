@@ -3,7 +3,7 @@ package com.project.pom.avvillas.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class CreditoPage extends BasePage {
+public class CreditPage extends BasePage {
 
     By montoInputLocator = By.id("i_monto_prestamo");
     By plazoInputLocator = By.id("i_plazo_meses");
@@ -16,8 +16,7 @@ public class CreditoPage extends BasePage {
     By diaInputSelector = By.cssSelector("#i_fecha_nacimiento_table > tbody > tr:nth-child(4) > td:nth-child(2) > div");
     By answerMessageOutputSelector = By.cssSelector("#errorTecnico > span.msg-text");
 
-
-    public CreditoPage(WebDriver driver) {
+    public CreditPage(WebDriver driver) {
         super(driver);
     }
 
