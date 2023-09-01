@@ -1,9 +1,7 @@
-package com.project.pom.mercury;
+package com.project.pom.mercury.pages;
 
-import com.project.pom.avvillas.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class RegisterPage extends BasePage {
 
@@ -23,7 +21,7 @@ public class RegisterPage extends BasePage {
         String password = "123456";
         String userName = "santicr";
         click (registerLinkLocator);
-        WaitUntil (4, userNameInputLocator);
+        waitUntil (4, userNameInputLocator);
         type (userName, userNameInputLocator);
         type (password, passwordInputLocator);
         type (password, confirmPasswordInputLocator);
@@ -31,9 +29,8 @@ public class RegisterPage extends BasePage {
     }
 
     public String registeredMessage () {
-        WaitUntil(4, registerMsgLocator);
-        WebElement registerMessageElement = findElement(registerMsgLocator);
-        return getText(registerMessageElement);
+        waitUntil (4, registerMsgLocator);
+        return getText(registerMsgLocator);
     }
 
 }

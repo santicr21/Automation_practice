@@ -2,8 +2,8 @@
 <suite name="Suites">
     <test name="LoginSuite">
         <classes>
-            <class name="com.project.pom.mercury.RegisterTest"/>
-            <class name="com.project.pom.mercury.SignInTest"/>
+            <class name="com.project.pom.mercury.tests.RegisterTest"/>
+            <class name="com.project.pom.mercury.tests.SignInTest"/>
         </classes>
     </test>
 </suite>
