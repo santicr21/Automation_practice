@@ -3,41 +3,45 @@ package com.project.pom.mercury.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BasePage {
-    WebDriver driver;
+    private WebDriver driver;
+    private WebDriverWait waiter;
     public BasePage(WebDriver driver) {
         this.driver = driver;
+        this.waiter = new WebDriverWait(driver, Duration.ofSeconds(5));
+        PageFactory.initElements(driver, this);
     }
 
-    public void click (By locator) {
-        this.driver.findElement(locator).click();
+    public void click (WebElement element) {
+        this.waiter.until(ExpectedConditions.visibilityOf(element));
+        element.click();
     }
 
-    public void waitUntil (int seconds, By locator) {
-        try {
-            new WebDriverWait(this.driver, Duration.ofSeconds(seconds)).until(ExpectedConditions.visibilityOfElementLocated(locator));
-        }
-        catch (Exception e) {
-            System.out.println("Element not visible!");
-        }
+    public void type (String text, WebElement element) {
+        this.waiter.until(ExpectedConditions.visibilityOf(element));
+        element.clear();
+        element.sendKeys(text);
     }
 
-    public void type (String text, By locator) {
-        WebElement textInput = this.driver.findElement(locator);
-        textInput.clear();
-        textInput.sendKeys(text);
-    }
-
-    public String getText (By locator) {
-        return this.driver.findElement(locator).getText();
+    public String getText (WebElement element) {
+        this.waiter.until(ExpectedConditions.visibilityOf(element));
+        return element.getText();
     }
 
     public void visit (String url) {
         this.driver.get(url);
+    }
+
+    public WebDriver getDriver() {
+        return this.driver;
+    }
+    public WebDriverWait getWaiter() {
+        return this.waiter;
     }
 
     public void maximizeWindow() {

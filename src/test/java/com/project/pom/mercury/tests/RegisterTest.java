@@ -8,5 +8,6 @@ public class RegisterTest extends BaseTest {
     public void testRegisterUser () {
         registerPage.registerUser();
         Assert.assertEquals(registerPage.registeredMessage(), "Note: Your user name is santicr.", "Register failed");
+        signInPage = registerPage.goToSignInPage();
     }
 }
